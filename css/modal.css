@@ -1,20 +1,153 @@
+/* MODAL - RESPONSIVE */
 .modal {
   background-color: rgba(0, 0, 0, 0.774);
   width: 100%;
-  height: 50%;
+  height: auto;
+  min-height: 50%;
   margin-top: 300px;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .modal p {
   color: white;
+  font-size: clamp(14px, 2vw, 16px);
+  line-height: 1.6;
+  margin: 10px 0;
 }
 
 .modal-header {
   background-color: rgb(250, 167, 167);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
 }
-iframe{
-  width: 600px;
+
+.modal-header h4,
+.modal-header h5,
+.modal-header h6 {
+  margin: 0;
+  color: #333;
+}
+
+/* IFRAME - RESPONSIVE */
+iframe {
+  width: 90%;
+  max-width: 600px;
   height: 250px;
-  margin-left: 45%;
-  margin-right: 40%;
+  margin: 20px auto;
+  display: block;
+  border: none;
+  border-radius: 8px;
+}
+
+/* ============ RESPONSIVE ============ */
+
+/* TABLET - 1024px y menos */
+@media (max-width: 1024px) {
+  .modal {
+    margin-top: 200px;
+    padding: 15px;
+  }
+
+  iframe {
+    width: 95%;
+    height: 230px;
+  }
+}
+
+/* TABLET PEQUEÑO - 768px y menos */
+@media (max-width: 768px) {
+  .modal {
+    margin-top: 150px;
+    padding: 15px;
+    min-height: auto;
+  }
+
+  .modal-header {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  .modal p {
+    font-size: 14px;
+  }
+
+  iframe {
+    width: 100%;
+    height: 200px;
+    margin: 15px 0;
+  }
+}
+
+/* MOBILE - 480px y menos */
+@media (max-width: 480px) {
+  .modal {
+    margin-top: 100px;
+    padding: 12px;
+    background-color: rgba(0, 0, 0, 0.85);
+  }
+
+  .modal-header {
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+
+  .modal-header h4,
+  .modal-header h5,
+  .modal-header h6 {
+    font-size: 16px;
+  }
+
+  .modal p {
+    font-size: 12px;
+    margin: 8px 0;
+  }
+
+  iframe {
+    width: 100%;
+    height: 180px;
+    margin: 12px 0;
+  }
+}
+
+/* MOBILE PEQUEÑO - 360px y menos */
+@media (max-width: 360px) {
+  .modal {
+    margin-top: 80px;
+    padding: 10px;
+  }
+
+  .modal-header {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .modal-header h4,
+  .modal-header h5,
+  .modal-header h6 {
+    font-size: 14px;
+  }
+
+  .modal p {
+    font-size: 11px;
+  }
+
+  iframe {
+    width: 100%;
+    height: 150px;
+    margin: 10px 0;
+  }
+}
+
+/* HORIZONTAL EN MÓVIL */
+@media (max-height: 600px) and (orientation: landscape) {
+  .modal {
+    margin-top: 50px;
+    min-height: auto;
+  }
+
+  iframe {
+    height: 150px;
+  }
 }
